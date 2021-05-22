@@ -5,7 +5,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light" id="custom-nav">
-	<a href="/" id="custom-navbar-brand" class="navbar-brand ">SportyShoes</a>
+	<a href="/" id="custom-navbar-brand" class="navbar-brand" style="font-family: 'Kaushan Script', cursive; font-weight:600;">SportyShoes</a>
 	<button type="button" class="navbar-toggler" data-toggle="collapse"
 		data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
