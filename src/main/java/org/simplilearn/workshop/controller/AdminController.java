@@ -56,6 +56,35 @@ public class AdminController {
 		this.categoryService = categoryService;
 	}
 
+	@GetMapping("/adminReg") 
+	public String signup(ModelMap Map)
+	{
+		return "adminReg";
+	}
+	
+	@PostMapping("/admin/register")
+	public String adminRegisterAction(ModelMap map, javax.servlet.http.HttpServletRequest request,
+			@RequestParam(value="username", required=true) String username,
+			@RequestParam(value="password", required=true) String password ) {
+		
+		
+		Admin admin = adminService.findByLoginUsername(username);
+		if(admin!=null) {
+			map.addAttribute("error", "This username already exists. ");
+			return "/adminReg";
+		}
+		
+		
+		admin = new Admin();
+		admin.setId((long) 0);
+		admin.setLogin(new Login());
+		admin.login.setUsername(username);
+		admin.login.setPassword(password);
+		
+		adminService.save(admin);
+		return "redirect:/admin";	
+	}
+
 	@GetMapping("/admin")
 	public String login(ModelMap map, javax.servlet.http.HttpServletRequest request) {
 		// check if session is still alive
