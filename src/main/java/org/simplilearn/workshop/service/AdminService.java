@@ -27,7 +27,12 @@ public class AdminService {
 	   
 	    public void updatePassword(Admin admin) {
 			adminRepository.save(admin);
-		}
+	    }
+	
+	    public Admin findByLoginUsername(String username) {
+	    	
+	    	return adminRepository.findByLoginUsername(username);
+	    }
 	    
 
 }
