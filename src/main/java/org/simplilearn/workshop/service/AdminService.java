@@ -30,5 +30,10 @@ public class AdminService {
 		}
 	    
 
+ 	public Admin findByLoginUsername(String username) {
+	    	
+	    	return adminRepository.findByLoginUsername(username);
+	    }
+
 }
 
